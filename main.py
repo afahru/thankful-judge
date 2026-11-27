@@ -21,6 +21,10 @@ TEXT = (
 
 
 def main():
+    if not 1 <= len(TEXT) <= 1000:
+        raise ValueError(
+            "entry text must be 1-1000 characters, got %d" % len(TEXT)
+        )
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(TEXT)
